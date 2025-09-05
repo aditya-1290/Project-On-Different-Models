@@ -4,5 +4,4 @@ __pycache__/
 F-urkan_rStar2-Agent-14B-Q4_0-GGUF/
 .cache/
 .gitattributes
-Readme.md
 rstar2-agent-14b-q4_0.gguf 
