@@ -155,7 +155,7 @@ This downloads the `F-urkan/rStar2-Agent-14B-Q4_0-GGUF` model to a local folder.
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.13.4
 - FastAPI
 - Uvicorn
 - Transformers
