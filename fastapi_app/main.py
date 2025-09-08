@@ -38,8 +38,11 @@ class ClassificationResponse(BaseModel):
 # Endpoints
 @app.post("/summarize")
 def summarize(request: TextRequest):
-    summary = summarizer(request.text, max_length=50, min_length=25, do_sample=False)
-    return {"summary_text": summary[0]['summary_text']}
+    try:
+        summary = summarizer(request.text, max_length=50, min_length=25, do_sample=False, truncation=True)
+        return {"summary_text": summary[0]['summary_text']}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @app.post("/sentiment", response_model=SentimentResponse)
 def sentiment_analysis(request: TextRequest):
